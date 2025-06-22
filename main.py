@@ -171,7 +171,7 @@ def preprocess_city(domain = 'MAD'):
         if data.iloc[i]['Date'].month < 5 or data.iloc[i]['Date'].month > 9:
             data.is_heatwave.iloc[i] = False
     print(merged)
-    data.to_csv(f'./data/preprocessed/{domain}_preprocessed.csv', index = False)
+    data.to_csv(f'./data/{domain}_ine_preprocessed.csv', index = False)
     
 if __name__ == '__main__':
     # domain = 'MAD'
@@ -184,10 +184,10 @@ if __name__ == '__main__':
     input_len = 14
     output_len = 5
     
-    if not os.path.exists(f'./data/preprocessed/{domain}_preprocessed.csv'):
+    if not os.path.exists(f'./data/{domain}_preprocessed.csv'):
         preprocess_city(domain = domain)
 
-    data = pd.read_csv(f'./data/ine_preprocessed/{domain}_{suffix}_preprocessed.csv').drop(columns = ['SSC'])
+    data = pd.read_csv(f'./data/{domain}_{suffix}_preprocessed.csv').drop(columns = ['SSC'])
     data['Date'] = pd.to_datetime(data['Date'])
     
     RANGES = {

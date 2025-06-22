@@ -4,7 +4,7 @@ This is the code repo for paper "Modular Deep-Learning-Based Early Warning Syste
 
 ## Execution
 
-To run the model, use the following comman:
+To run the model, use the following command:
 
 ```
 python3 main.py <Year> <City Code> <Data Subgroup> <Local Device>
